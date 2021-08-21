@@ -1,0 +1,26 @@
+<%- layout('boilerplate') %>
+<div
+	class="container d-flex flex-column form-wrapper align-items-center justify-content-center mt-5"
+>
+	<h1 class="mb-4">Новая запись</h1>
+	<div class="containter">
+		<form method="POST" enctype="multipart/form-data" novalidate class="validatedform">
+			<div class="mb-3">
+				<label class="form-label" for="title">Название</label>
+				<input class="form-control" type="text" name="entry[title]" id="title" required />
+				<div class="valid-feedback">Looks good!</div>
+			</div>
+			<div class="mb-3">
+				<label class="form-label" for="text">Текст</label>
+				<textarea class="form-control" type="text" name="entry[text]" id="text" required></textarea>
+				<div class="valid-feedback">Looks good!</div>
+			</div>
+			<div class="mb-3">
+				<input type="file" name="image" id="image" />
+			</div>
+			<button type="submit" class="btn btn-primary">Добавить</button>
+		</form>
+	</div>
+</div>
+
+

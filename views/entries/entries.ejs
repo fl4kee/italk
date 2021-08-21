@@ -1,0 +1,16 @@
+<%- layout('boilerplate') %>
+<div class="container d-flex flex-column align-items-center my-5">
+
+  <% for(entry of entries) {%>
+    <div class="card mb-3" style="width: 50rem;">
+      <img src="<%= entry.image %>" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= entry.title %></h5>
+        <p class="card-text">Запись пользователя - <%= entry.owner.username %></p>
+        <p class="card-text"><%= entry.text %></p>
+        <!-- <p class="card-text"><small class="text-muted">Последний раз обновлено 3 мин назад</small></p> -->
+      </div>
+    </div>
+  <% } %>  
+
+</div>
