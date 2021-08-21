@@ -1,3 +1,4 @@
+// Валидация bootstrap
 (function () {
   "use strict";
 

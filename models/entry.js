@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// Схема записи
 const entrySchema = new mongoose.Schema({
   title:{
     type:String,

@@ -1,4 +1,4 @@
-const { entrySchema }  = require('./schemas')
+const { entrySchema, credentialsSchema }  = require('./schemas')
 
 
 module.exports.isLoggedIn = (req, res, next) => {
@@ -13,8 +13,18 @@ module.exports.isLoggedIn = (req, res, next) => {
 module.exports.validateEntry = (req, res, next) => {
   const { error } = entrySchema.validate(req.body)
   if (error) {
-      req.flash('error', 'Текст не может быть больше 512 символов')
+      req.flash('error', error.message)
       res.redirect('/entries/new')
   } else {
       next();
 }}
+
+module.exports.validateCredentials = (req, res, next) => {
+  const {error} = credentialsSchema.validate(req.body)
+  if(error){
+    req.flash('error', error.message)
+    res.redirect('/users/register')
+  } else {
+    next();
+  }
+}

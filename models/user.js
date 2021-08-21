@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const passportLocalMongoose = require('passport-local-mongoose')
+
+// Схема пользователя
 const userSchema = new mongoose.Schema({
   email:{
     type:String,
