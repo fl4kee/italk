@@ -3,7 +3,6 @@ const app = express()
 require('dotenv').config()
 const mongoose = require('mongoose')
 const path = require('path')
-const PORT = process.env.PORT || 3000
 const engine = require('ejs-mate')
 const usersRoutes = require('./routes/users')
 const entriesRoutes = require('./routes/entries')
@@ -81,6 +80,8 @@ app.use((err, req, res, next) => {
 
 })
 
+
+const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`)
 })
